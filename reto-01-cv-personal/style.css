@@ -1,52 +1,203 @@
+/* Estilos Base */
+:root {
+    --primary-color: #007bff; /* Azul vibrante */
+    --secondary-color: #6c757d; /* Gris para texto secundario */
+    --background-light: #f8f9fa;
+    --background-white: #ffffff;
+    --text-dark: #343a40;
+    --border-color: #dee2e6;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-light);
 }
 
-header {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #eee;
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
 }
 
-header h1 {
+h1, h2, h3 {
     margin-top: 0;
-    color: #333;
+    color: var(--primary-color);
 }
 
-main {
-    max-width: 900px;
-    margin: auto;
-}
-
-.item {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border: 1px solid #eee;
-    border-radius: 5px;
-}
-
-.item h2 {
-    color: #333;
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-.item p {
-    margin-bottom: 5px;
-}
-
-.item a {
-    color: #007bff;
+a {
+    color: var(--primary-color);
     text-decoration: none;
 }
 
-.item a:hover {
+a:hover {
     text-decoration: underline;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: var(--background-white);
+    padding: 30px 0;
+    text-align: center;
+}
+
+header h1 {
+    color: var(--background-white);
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+/* Main Layout */
+.cv-main {
+    display: flex;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background-color: var(--background-white);
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden; /* Para contener los floats o flexbox */
+}
+
+/* Sidebar (Información Personal y Habilidades) */
+.sidebar {
+    width: 30%;
+    background-color: var(--background-light);
+    padding: 30px;
+    border-right: 1px solid var(--border-color);
+}
+
+.sidebar h3 {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.contact-info p, .education ul, .skills ul {
+    margin-bottom: 10px;
+}
+
+.skills ul, .education ul, .certifications ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skills li span {
+    font-weight: bold;
+}
+
+.contact-info i {
+    color: var(--primary-color);
+    margin-right: 10px;
+    width: 15px; /* Para alinear mejor los iconos */
+}
+
+/* Content (Perfil y Experiencia) */
+.content {
+    width: 70%;
+    padding: 30px;
+}
+
+.profile p {
+    font-size: 1.05em;
+    text-align: justify;
+}
+
+.experience-item {
+    border-left: 3px solid var(--primary-color);
+    padding-left: 15px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.experience-item h4 {
+    margin-bottom: 5px;
+    color: var(--text-dark);
+}
+
+.experience-item .role {
+    font-style: italic;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+.experience-item .dates {
+    font-size: 0.9em;
+    color: var(--secondary-color);
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.experience-item .description ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+.experience-item .description ul li {
+    margin-bottom: 5px;
+    text-align: justify;
+}
+
+/* Certificaciones Toggle */
+#toggle-certifications {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+}
+
+#cert-list.hidden {
+    display: none;
+}
+
+#cert-list li {
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    border-bottom: 1px dotted var(--border-color);
+    padding-bottom: 5px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cv-main {
+        flex-direction: column;
+    }
+
+    .sidebar, .content {
+        width: 100%;
+        border-right: none;
+        padding: 20px;
+    }
+
+    .sidebar {
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .experience-item .dates {
+        position: static;
+        margin-top: 5px;
+    }
 }

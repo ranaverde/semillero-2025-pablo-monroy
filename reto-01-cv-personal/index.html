@@ -3,61 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi CV</title>
+    <title>CV - Pablo Monroy</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>Pablo Rene Monroy Sánchez</h1>
-        <h2>Ingeniero de Datos y Desarrollador</h2>
+        <div class="container">
+            <h1>Pablo Monroy</h1>
+            <p id="current-title"></p>
+        </div>
     </header>
 
-    <main>
-        <section class="item">
-            <h2>Acerca de mi</h2>
-            <p>Soy Data Engineering, Data Analysis y Developer, con más de 25 años de experiencia 
-            en diversas áreas de TI, incluyendo desarrollo de sistemas, bases de datos. 
-            Mi trayectoria me ha permitido consolidar una profunda experiencia en el ciclo de vida 
-            completo de los datos, desde la integración hasta la visualización.</p>
+    <div class="container cv-main">
+        <aside class="sidebar">
+            <section class="contact-info">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-map-marker-alt"></i> <span id="location"></span></p>
+                <p><i class="fas fa-phone"></i> <span id="phone"></span></p>
+                <p><i class="fas fa-envelope"></i> <span id="email"></span></p>
+                <p><i class="fas fa-id-card"></i> Visa: <span id="visa"></span></p>
+                <p><i class="fab fa-linkedin"></i> <a id="linkedin" href="#" target="_blank">LinkedIn</a></p>
+                <p><i class="fas fa-globe"></i> <a id="platzi" href="#" target="_blank">Platzi</a></p>
+                <p><i class="fas fa-language"></i> Inglés: <span id="language-level"></span></p>
+            </section>
 
-            <p>Poseo experiencia en SQL y una sólida habilidad en procesos ETL, 
-            destacando mi trabajo con SQL Server Integration Services (SSIS) y Data Factory. 
-            Actualmente, trabajo como Data Engineer, trabajando con Snowflake, Azure SQL Azure Data Factory, Azure Functions y Power BI.</p>
+            <section class="skills">
+                <h3>Tecnologías Clave</h3>
+                <ul id="skills-list">
+                    </ul>
+            </section>
 
-            <p>Mi perfil técnico se complementa con experiencia en programación Python 
-            (Jupyter, Pandas, Matplotlib, Seaborn), así como en .Net, HTML, CSS, JavaScript 
-            y MVC. Tengo conocimientos básicos en la nube de Microsoft Azure 
-            (SQL Azure, Azure Data Factory, Azure Functions y Data Fabric).</p>
+            <section class="education">
+                <h3>Estudios</h3>
+                <ul id="education-list">
+                    </ul>
+            </section>
 
-            <p>Además de mis habilidades técnicas, cuento con capacidad en consultoría y 
-            capacitación, con experiencia en el contacto directo con clientes nacionales e 
-            internacionales. Mi nivel de inglés es B1 intermedio.</p>
+            <section class="certifications">
+                <h3>Certificaciones</h3>
+                <button id="toggle-certifications">Mostrar/Ocultar Certificaciones</button>
+                <ul id="cert-list" class="hidden">
+                    </ul>
+            </section>
+        </aside>
 
-            <p>Apasionado por crear soluciones de negocio sencillas y útiles, siempre 
-            buscando la eficiencia y la mejora constante en los procesos de integración 
-            y análisis de datos.</p>
-        </section>
+        <main class="content">
+            <section class="profile">
+                <h2>Acerca de mí</h2>
+                <p id="profile-text"></p>
+            </section>
 
-        <section class="item">
-            <h2>Habilidades</h2>
-            <ul>
-                <li>SQL Server</li>
-                <li>SQL Server Integration Services (SSIS)</li>
-                <li>Azure Data Factory</li>
-                <li>Snowflake</li>
-                <li>Power BI</li>
-                <li>Python (Jupyter, Pandas, Matplotlib, Seaborn)</li>
-                <li>C# y .NET</li>
-                <li>HTML, CSS, JavaScript</li>
-             </ul>
-        </section>
+            <section class="experience">
+                <h2>Experiencia Profesional</h2>
+                <div id="experience-list">
+                    </div>
+            </section>
+        </main>
+    </div>
 
-        <section class="item">
-            <h2>Experiencia / Proyectos</h2>
-            <p>Link: <a href="#" target="_blank">[Enlace relevante, si lo hay]</a></p>
-            <p>[Descripción de tu sección]</p>
-        </section>
+    <footer>
+        <p>&copy; 2025 Pablo Monroy | Generado con Plantilla CV</p>
+    </footer>
 
-    </main>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
