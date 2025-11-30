@@ -1,11 +1,13 @@
 /* Estilos Base */
+
 :root {
-    --primary-color: #007bff; /* Azul vibrante */
-    --secondary-color: #6c757d; /* Gris para texto secundario */
-    --background-light: #f8f9fa;
-    --background-white: #ffffff;
-    --text-dark: #343a40;
-    --border-color: #dee2e6;
+    --primary-color: #2D3748; /* Azul oscuro principal */
+    --accent-color: #8BC34A;  /* Verde lima acento */
+    --secondary-color: #718096; /* Gris para texto secundario */
+    --background-light: #F5F6FA; /* Fondo claro */
+    --background-white: #FFFFFF; /* Fondo blanco */
+    --text-dark: #222B45; /* Texto principal */
+    --border-color: #E2E8F0; /* Bordes y líneas */
 }
 
 body {
@@ -24,31 +26,39 @@ body {
     padding: 20px 0;
 }
 
+
 h1, h2, h3 {
     margin-top: 0;
     color: var(--primary-color);
 }
 
+
 a {
-    color: var(--primary-color);
+    color: var(--accent-color);
     text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
 }
 
 a:hover {
+    color: var(--primary-color);
     text-decoration: underline;
 }
 
 /* Header */
+
 header {
-    background-color: var(--primary-color);
+    background: var(--primary-color);
     color: var(--background-white);
     padding: 30px 0;
     text-align: center;
+    box-shadow: 0 2px 8px rgba(45,55,72,0.08);
 }
 
 header h1 {
     color: var(--background-white);
     margin-bottom: 5px;
+    letter-spacing: 1px;
 }
 
 header p {
@@ -57,16 +67,18 @@ header p {
 }
 
 /* Main Layout */
+
 .cv-main {
     display: flex;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 16px rgba(45,55,72,0.10);
     background-color: var(--background-white);
     margin-top: 20px;
-    border-radius: 8px;
-    overflow: hidden; /* Para contener los floats o flexbox */
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 /* Sidebar (Información Personal y Habilidades) */
+
 .sidebar {
     width: 30%;
     background-color: var(--background-light);
@@ -74,8 +86,9 @@ header p {
     border-right: 1px solid var(--border-color);
 }
 
+
 .sidebar h3 {
-    border-bottom: 2px solid var(--primary-color);
+    border-bottom: 2px solid var(--accent-color);
     padding-bottom: 5px;
     margin-bottom: 15px;
     font-size: 1.1em;
@@ -90,38 +103,46 @@ header p {
     padding: 0;
 }
 
+
 .skills li span {
     font-weight: bold;
+    color: var(--accent-color);
 }
 
+
 .contact-info i {
-    color: var(--primary-color);
+    color: var(--accent-color);
     margin-right: 10px;
-    width: 15px; /* Para alinear mejor los iconos */
+    width: 15px;
 }
 
 /* Content (Perfil y Experiencia) */
+
 .content {
     width: 70%;
     padding: 30px;
 }
+
 
 .profile p {
     font-size: 1.05em;
     text-align: justify;
 }
 
+
 .experience-item {
-    border-left: 3px solid var(--primary-color);
+    border-left: 3px solid var(--accent-color);
     padding-left: 15px;
     margin-bottom: 30px;
     position: relative;
 }
 
+
 .experience-item h4 {
     margin-bottom: 5px;
-    color: var(--text-dark);
+    color: var(--primary-color);
 }
+
 
 .experience-item .role {
     font-style: italic;
@@ -129,13 +150,15 @@ header p {
     margin-bottom: 5px;
 }
 
+
 .experience-item .dates {
     font-size: 0.9em;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     position: absolute;
     top: 0;
     right: 0;
 }
+
 
 .experience-item .description ul {
     list-style: disc;
@@ -143,26 +166,37 @@ header p {
     padding-left: 0;
 }
 
+
 .experience-item .description ul li {
     margin-bottom: 5px;
     text-align: justify;
 }
 
 /* Certificaciones Toggle */
+
 #toggle-certifications {
-    background-color: var(--primary-color);
-    color: white;
+    background-color: var(--accent-color);
+    color: var(--background-white);
     border: none;
     padding: 10px;
     margin-bottom: 10px;
     cursor: pointer;
     width: 100%;
     border-radius: 4px;
+    font-weight: bold;
+    transition: background 0.2s;
 }
+
+#toggle-certifications:hover {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+}
+
 
 #cert-list.hidden {
     display: none;
 }
+
 
 #cert-list li {
     margin-bottom: 8px;
@@ -172,12 +206,15 @@ header p {
 }
 
 /* Footer */
+
 footer {
     text-align: center;
     padding: 15px 0;
     margin-top: 20px;
     font-size: 0.9em;
-    color: var(--secondary-color);
+    color: var(--background-white);
+    background: var(--primary-color);
+    letter-spacing: 1px;
 }
 
 /* Responsive Design */
